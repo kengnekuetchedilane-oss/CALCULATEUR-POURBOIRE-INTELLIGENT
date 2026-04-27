@@ -19,12 +19,12 @@ function calculerEtAfficher() {
     let montant = parseFloat(montantInput.value);
     if (isNaN(montant) || montant === 0 || montantInput.value === '') {
         montant = 0;
-        montantError.textContent = montant === 0 ? '⚠️ Entrez un montant valide (ex: 45.90)' : '';
+        montantError.textContent = montant === 0 ? ' Entrez un montant valide (ex: 45.90)' : '';
         if (montant === 0 && montantInput.value !== '') {
-            montantError.textContent = '⚠️ Le montant doit être supérieur à 0';
+            montantError.textContent = ' Le montant doit être supérieur à 0';
         }
     } else if (montant < 0) {
-        montantError.textContent = '❌ Le montant ne peut pas être négatif';
+        montantError.textContent = 'Le montant ne peut pas être négatif';
         montant = 0;
     } else {
         montantError.textContent = '';
@@ -33,7 +33,7 @@ function calculerEtAfficher() {
     // 2. Validation du nombre de personnes
     let personnes = parseInt(personnesInput.value);
     if (isNaN(personnes) || personnes < 1) {
-        personnesError.textContent = '👥 Minimum 1 personne';
+        personnesError.textContent = ' Minimum 1 personne';
         personnes = 1;
         personnesInput.value = 1;
     } else {
